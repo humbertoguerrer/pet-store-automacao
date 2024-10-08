@@ -1,0 +1,18 @@
+{
+  "id": 200,
+  "category": {
+    "id": 1,
+    "name": "cachorro"
+  },
+  "name": "pluto",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "cachorros"
+    }
+  ],
+  "status": "available"
+}

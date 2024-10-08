@@ -1,17 +1,17 @@
 {
-  "id": 0,
+  "id": 200,
   "category": {
-    "id": 0,
-    "name": "Cachorro"
+    "id": 1,
+    "name": "cachorro"
   },
-  "name": "Pluto",
+  "name": "pluto",
   "photoUrls": [
     "https://lumiere-a.akamaihd.net/v1/images/eb_chara_pluto_sp_d7070adc.jpeg"
   ],
   "tags": [
     {
-      "id": 0,
-      "name": "Cachorros"
+      "id": 1,
+      "name": "cachorros"
     }
   ],
   "status": "pending"

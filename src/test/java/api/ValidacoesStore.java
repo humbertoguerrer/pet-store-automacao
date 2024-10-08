@@ -3,8 +3,6 @@ package api;
 import io.restassured.response.Response;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import static io.restassured.RestAssured.*;
 import static com.jayway.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
@@ -13,12 +11,10 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class ValidacoesStore {
 
-    public String obterDados(String obterJson) throws IOException {
-        return new String(Files.readAllBytes(Paths.get(obterJson)));
-    }
+    private final Utils utilitarios = new Utils();
 
-    public Response fazerPost() throws IOException {
-        String jsonPost = obterDados("src/test/resources/order.json");
+    public Response fazerPostOrder() throws IOException {
+        String jsonPost = utilitarios.obterDados("src/test/resources/post-order.json");
 
         return given()
                 .contentType("application/json")
@@ -29,7 +25,7 @@ public class ValidacoesStore {
 
     public void validarPostOrder(Response response) {
         response.then().statusCode(200);
-        response.then().body(matchesJsonSchemaInClasspath("schema-order.json"));
+        response.then().body(matchesJsonSchemaInClasspath("schema-post-order.json"));
         response.then()
                 .body("id", equalTo(1))
                 .body("petId", equalTo(1))
